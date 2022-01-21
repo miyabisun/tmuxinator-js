@@ -6,9 +6,10 @@ module.exports = {
   command: ["list", "ls", "l"],
   desc: "Lists all tmuxinnator projects",
   handler: async argv => {
-    const path = `${process.env.HOME}/.config/tmuxinator`;
-    await fs.mkdir(path, {recursive: true})
-    const files = await fs.readdir(path);
+    const dir = `${process.env.HOME}/.config/tmuxinator`;
+    await fs.mkdir(dir, {recursive: true});
+
+    const files = await fs.readdir(dir);
     console.info("tmuxinator projects:");
     pipe(
       files,
