@@ -1,15 +1,13 @@
-const fs = require("fs/promises");
+const fs = require("fs");
 const R = require("ramda");
+const {dir} = require("../lib/utils");
 const pipe = (v, ...args) => R.pipe(...args)(v);
 
 module.exports = {
   command: ["list", "ls", "l"],
   desc: "Lists all tmuxinnator projects",
   handler: async argv => {
-    const dir = `${process.env.HOME}/.config/tmuxinator`;
-    await fs.mkdir(dir, {recursive: true});
-
-    const files = await fs.readdir(dir);
+    const files = await fs.readdirSync(dir);
     console.info("tmuxinator projects:");
     pipe(
       files,

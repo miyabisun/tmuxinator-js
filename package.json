@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/miyabisun/tmuxinator-js#readme",
   "dependencies": {
+    "os": "^0.1.2",
     "ramda": "^0.28.0",
     "tmuxn": "^0.0.5",
+    "xdg-basedir": "^4.0.0",
     "yargs": "^17.3.1"
   }
 }
