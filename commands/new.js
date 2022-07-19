@@ -3,7 +3,10 @@ const R = require("ramda");
 const {dir, checkHealth} = require("../lib/utils");
 
 module.exports = {
-  command: ["new <name>", "n <name>"],
+  command: [
+    "new <name>", "edit <name>", "open <name>",
+    "n <name>", "e <name>", "o <name>",
+  ],
   desc: "Create a new project file and open it in your editor",
   handler: ({name}) => {
     checkHealth();

@@ -1,10 +1,10 @@
 const fs = require("fs");
 const R = require("ramda");
 const {dir} = require("../lib/utils");
-const pipe = (v, ...args) => R.pipe(...args)(v);
+const pipe = require("../lib/pipe");
 
 module.exports = {
-  command: ["list", "ls", "l"],
+  command: ["list", "ls"],
   desc: "Lists all tmuxinnator projects",
   handler: async argv => {
     const files = await fs.readdirSync(dir);
